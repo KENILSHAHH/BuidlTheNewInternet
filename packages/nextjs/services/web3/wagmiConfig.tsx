@@ -18,9 +18,9 @@ import scaffoldConfig from "~~/scaffold.config";
 const { targetNetworks } = scaffoldConfig;
 
 // We always want to have mainnet enabled (ENS resolution, ETH price, etc). But only once.
-export const enabledChains = targetNetworks.find((network: Chain) => network.id == 1101)
+export const enabledChains = targetNetworks.find((network: Chain) => network.id == 11155111)
   ? targetNetworks
-  : ([...targetNetworks, polygonZkEvm] as const);
+  : ([...targetNetworks, sepolia] as const);
 
 // 1. Get projectId from https://cloud.walletconnect.com
 export const projectId = "678cb5559099f552e87f019a40ccaea0";

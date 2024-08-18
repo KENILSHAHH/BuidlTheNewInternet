@@ -5,7 +5,7 @@ import { BigNumber, ethers } from 'ethers';
 import Web3Modal from 'web3modal';
 import preferenceabi from '../abi/preferenceabi.json';
 import bridge from '../abi/bridgeabi.js';
-const preferenceAddress = '0x759E4e020501486092dd414bfe8D9ed91186B4Cd';
+const preferenceAddress = '0xb591d3D7e0460C3366e8D49709a644e6E8d04E22';
 
 export default function SendAssets() {
   const [enteredAddress, setEnteredAddress] = useState('');
@@ -26,7 +26,8 @@ const [inputValue, setInputValue] = useState(BigNumber.from(0));
     setInputValue(tokenAmount);
     }
 
-  async function checkAddress() {
+    async function checkAddress() {
+          event.preventDefault();
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
@@ -39,7 +40,8 @@ const [inputValue, setInputValue] = useState(BigNumber.from(0));
     const txn = await contract.getPrimaryAddress(enteredAddress);
     const pref = await contract.getUserPreferences(txn);
     console.log(pref);
-    setPreference(pref);
+        setPreference(pref);
+        setCorrectAddress(pref[0])
     
   }
  
@@ -50,7 +52,7 @@ const [inputValue, setInputValue] = useState(BigNumber.from(0));
     const provider = new ethers.providers.Web3Provider(connection);
     const signer =  provider.getSigner();
     const bridgeasset = new ethers.Contract(
-      '0x528e26b25a34a4a5d0dbda1d57d318153d2ed582',
+      '0x2a3DD3EB832aF982ec71669E178424b10Dca2EDe',
       bridge,
       signer
     );
@@ -85,7 +87,7 @@ const [inputValue, setInputValue] = useState(BigNumber.from(0));
         Send Assets
       </h1>
       <form
-        onSubmit={bridgeAssets}
+       
         style={{
           display: 'flex',
           justifyContent: 'center',
@@ -135,7 +137,7 @@ const [inputValue, setInputValue] = useState(BigNumber.from(0));
                   </div>
                   <input
                     type="text"
-                    placeholder="1 GHO"
+                    placeholder="1 ETH"
                     onChange={handleValueChange}
                     className="w-16 p-2 border rounded-md mr-2"
                   />

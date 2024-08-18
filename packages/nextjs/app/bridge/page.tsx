@@ -50,7 +50,7 @@ const [selectedCurrency, setSelectedCurrency] = useState("");
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer =  provider.getSigner();
-      const contract = new ethers.Contract("0x759E4e020501486092dd414bfe8D9ed91186B4Cd", preferenceAbi, signer);
+      const contract = new ethers.Contract("0xb591d3D7e0460C3366e8D49709a644e6E8d04E22", preferenceAbi, signer);
       console.log(selectedOption)
     const txn = await contract.registerUser(nameData.daoName, inputs, selectedOption, selectedCurrency);
     await txn.wait();
@@ -159,7 +159,7 @@ const [selectedCurrency, setSelectedCurrency] = useState("");
                     autoComplete="country-name"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option value="0xdAC17F958D2ee523a2206206994597C13D831ec7">USDT</option>
+                    <option value="0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0"> Matic</option>
                     <option value="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48">USDC</option>
                     <option value="0x0000000000000000000000000000000000000000">ETH</option>
                   </select>

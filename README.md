@@ -1,7 +1,7 @@
 # 🏗 SwapX
 
 ### Demo 
-https://www.youtube.com/watch?v=yD-pGWWtYbY
+[Demo preview](https://www.youtube.com/watch?v=yD-pGWWtYbY)
 
 
 Did you ever get a chance to receive your crypto assets where ever you needed?
